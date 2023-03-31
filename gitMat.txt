@@ -1,0 +1,90 @@
+_-------------------------------------------git--------------------------------------------
+its an distributed verstion control system in other words its an way to keep track of other records all version of an project and its also good to collabration with other people
+
+git is an software and github is an platform to store project using git
+
+we can upload project using git on github
+
+#mkdir == to create an new floder
+#touch [namewith] == create an new file 
+#ls == is used to list all files and folders
+#ls -a == is used to list all the hidden files    
+
+=> set gitconfig--
+#git config --global user.name == set user name
+#git config --global user.email == set email 
+----
+
+#git init == inizalize git repository [creates .git folder inside the working dir]   
+
+#git init <folderName> == create an folder inside it contain .git folder
+
+*folder which contains .git and other files are called working dir
+*.git folder is called working repository it container Stagging Area,Commit History
+
+=>basic working--
+*if file is the working dir then the file is copied to stagging Area  then files are added to commit History
+*commt history gives an unique identifaction which is 40 hexadecimal charaters( unique commit version)
+
+#git status == used to find status of  file(s) is in the working dir that is not added to stagging Area
+               *if it is modified then it can be seen by it
+
+#git add <fileName> == add file to stagging area (represent as index file in .git)
+
+#git add./ == add ALL the files present in working dir to stagging area
+
+#git -rf [nameWith] == delete an file
+
+#git ls-files --stage == show the files in stagging area along with status code	
+
+#git reset [hash] == to use only that commit with perticular hash
+
+#git restore --staged [nameWith] == remove an file from staged area before committing it.
+
+#git commit -m "CommitName" == add all the files present in stagging area to commit history also produce 7hexadecimal charaters
+
+#git reset HEAD -- [fileNameWith] ==  
+
+=> Branch--
+pointes to an perticular commit
+*HEAD is an pointer (HEAD -> master) here HEAD points to master branch default HEAD points to master(* represent which points to which branch)
+*new branch will point to latest commit  
+-----
+
+*first commit will be parent commit
+
+#git log == returns the commit that have been commit with hash value
+
+#git branch == shows the current branchs
+
+#git branch <branchName> == creates an branch with specified name,will point to latest branch
+
+#git checkout <branchName> == change HEAD to <branchName>, new commits will be pointed by newBranch
+
+#git branch -d <branch> == to delete an branch ENSURE THAT THE HEAD IS NOT POINTING TO THAT BRANCH
+=> Merge--
+is used to combine two branches 
+----
+
+#git merge <branchName> == allow to merge <branchName> with HEAD pointer, <branchName> should be first and HEAD comes later
+fast forward merge == is an place were our master and other branches were points to one commit after merge
+
+#git branch -b [branchNameWith] == creates an new branch named  newBranch and points to it
+
+=> remote repository---
+#git remote == to check remote repo is present or not
+
+before add the project to github create an git_repo and the use http link
+
+#git remote add [nameofremoterepository(default:orgin)] [HTTPS link] == connects local repo to remote repo
+ex: git remote add origin git/albingeorgekurian/project
+    origin is the name of url
+
+#git push -u [nameofremoterepository][branchName] = add to github repo
+ex: git push -u origin master
+
+#git clone [link] == get remote git repo
+
+#git fetch == 
+
+
